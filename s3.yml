@@ -1,0 +1,14 @@
+- name: Create S3 Bucket in AWS
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Create an S3 bucket
+      amazon.aws.s3_bucket:
+        name: my-unique-bucket-name
+        state: present
+        region: us-east-1
+      register: s3_output
+
+    - name: Display bucket creation result
+      debug:
+        var: s3_output
