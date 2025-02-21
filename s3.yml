@@ -6,7 +6,7 @@
       amazon.aws.s3_bucket:
         name: my-unique-bucket-name
         state: present
-        region: us-east-1
+        region: ap-south-1
       register: s3_output
 
     - name: Display bucket creation result
